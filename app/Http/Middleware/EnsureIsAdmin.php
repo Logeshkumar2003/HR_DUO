@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+
+class EnsureIsAdmin
+{
+    /**
+     * Handle an incoming request.
+     * Only users with an active admin role (Main or Secondary) can proceed.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     */
+    public function handle(Request $request, Closure $next)
+    {
+        if (!auth()->check()) {
+            return redirect('/login')->with('message', 'Please log in with your administrator account to continue.');
+        }
+
+        if (!auth()->user()->isAdmin()) {
+            abort(403, 'Access denied. You do not have administrator permissions to access this page or action.');
+        }
+
+        return $next($request);
+    }
+}
+

@@ -1,0 +1,956 @@
+/* ==========================================================================
+   Responsive Refinement & Modern Flexbox Layout System
+   Job Agency Website (template131 + Jobs Application)
+   ========================================================================== */
+
+/* 1. Global Box Sizing & Overflow Prevention */
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 2. Consistent Section Spacing & Visual Hierarchy */
+section, .services, .more-info, .fun-facts, .testimonials, .callback-form, .contact-us, .team {
+    position: relative;
+    width: 100%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #232323;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    line-height: 1.25;
+}
+
+.section-heading span {
+    font-size: 15px;
+    color: #777;
+    font-weight: 400;
+    display: block;
+}
+
+/* 3. Header & Navigation Modern Flexbox Alignment */
+.sub-header {
+    height: 42px;
+    line-height: 42px;
+    background-color: #232323;
+}
+
+.sub-header .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sub-header ul.left-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 28px;
+}
+
+.sub-header ul.left-info li {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 28px;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.sub-header ul.left-info li:last-child {
+    margin-right: 0;
+}
+
+.sub-header ul.left-info li a {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 46px;
+}
+
+.sub-header ul.left-info li a i {
+    margin-right: 8px;
+    color: #a4c639;
+    font-size: 15px;
+}
+
+.sub-header ul.right-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: none !important;
+    gap: 8px;
+}
+
+.sub-header ul.right-icons li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none !important;
+    margin: 0 !important;
+}
+
+.sub-header ul.right-icons li a {
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* Main Navbar */
+header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .navbar-brand h2 {
+    font-size: 22px;
+    margin: 0;
+    line-height: 1;
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.navbar .navbar-nav .nav-item {
+    margin: 0 4px;
+}
+
+.navbar .navbar-nav a.nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px !important;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Post a job button in nav */
+.nav-btn-post {
+    background-color: #a4c639;
+    color: #fff !important;
+    font-weight: 700 !important;
+    padding: 7px 18px !important;
+    border-radius: 20px !important;
+    font-size: 13px !important;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+}
+
+.nav-btn-post:hover {
+    background-color: #232323 !important;
+    color: #fff !important;
+}
+
+/* 4. Page Heading Banner */
+.page-heading {
+    padding: 180px 0 100px 0;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.page-heading h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.page-heading span {
+    font-size: 16px;
+    color: #f0f0f0;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+/* 5. Flexbox Job Listing Cards Alignment */
+.job-listing-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 280px;
+}
+
+.job-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.job-card-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin: 0 !important;
+}
+
+.job-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* 6. Contact Information Cards Centered & Equal Dimensions */
+.contact-information .contact-item,
+.contact-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 40px 30px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-information .contact-item:hover,
+.contact-item:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-color: #a4c639;
+}
+
+.contact-information .contact-item .contact-icon-wrapper,
+.contact-item .contact-icon-wrapper {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #a4c639 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    flex-shrink: 0;
+}
+
+.contact-information .contact-item .contact-icon-wrapper i,
+.contact-item .contact-icon-wrapper i,
+.contact-information .contact-item i,
+.contact-item i {
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+    background-color: transparent !important;
+    color: #ffffff !important;
+    font-size: 26px !important;
+    margin: 0 !important;
+    display: inline-block;
+}
+
+.contact-information .contact-item h4,
+.contact-item h4 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #232323;
+    margin-bottom: 12px;
+}
+
+.contact-information .contact-item p,
+.contact-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.contact-information .contact-item a,
+.contact-item a {
+    font-weight: 600;
+    color: #a4c639;
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-information .contact-item a:hover,
+.contact-item a:hover {
+    color: #8dae2a;
+    text-decoration: underline;
+}
+
+/* 7. Footer Flexbox & Spacing */
+footer {
+    background-color: #232323;
+    padding: 70px 0 30px 0;
+    color: #fff;
+}
+
+footer h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+footer h4:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background-color: #a4c639;
+}
+
+footer ul.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul.menu-list li {
+    margin-bottom: 10px;
+}
+
+footer ul.menu-list li a {
+    color: #bbb;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+footer ul.menu-list li a:hover {
+    color: #a4c639;
+    padding-left: 5px;
+}
+
+footer ul.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+footer ul.social-icons li a {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+footer ul.social-icons li a:hover {
+    background-color: #a4c639;
+    color: #fff;
+}
+
+/* 8. Table Responsive Actions Wrapping Prevention */
+.table td.text-right {
+    white-space: nowrap;
+}
+
+/* 9. Responsive Breakpoints */
+
+/* Laptops & Desktops (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar .navbar-nav .nav-item {
+        margin: 0 2px;
+    }
+    .navbar .navbar-nav a.nav-link {
+        font-size: 13px;
+        padding: 6px 8px !important;
+    }
+    .nav-btn-post {
+        padding: 5px 12px !important;
+        font-size: 12px !important;
+    }
+    .navbar .navbar-brand h2 {
+        font-size: 19px;
+    }
+}
+
+/* Tablets (768px to 991px) */
+@media (max-width: 991px) {
+    .sub-header {
+        display: none;
+    }
+    
+    header {
+        top: 0;
+        background-color: #fff !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        height: 75px;
+        position: fixed;
+    }
+    
+    .navbar {
+        padding: 12px 15px !important;
+    }
+    
+    .navbar .navbar-brand {
+        position: static !important;
+    }
+    
+    .navbar .navbar-brand h2 {
+        color: #232323 !important;
+        font-size: 20px;
+    }
+    
+    .navbar .navbar-brand h2 em {
+        color: #a4c639;
+    }
+    
+    .navbar-toggler {
+        position: static !important;
+        border: 1px solid #ddd !important;
+        background-color: #f8f9fa !important;
+        padding: 6px 10px;
+        border-radius: 6px;
+    }
+    
+    #navbarResponsive {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        max-height: 80vh;
+        overflow-y: auto;
+        border-top: 1px solid #eee;
+    }
+    
+    .navbar .navbar-nav {
+        flex-direction: column;
+        align-items: stretch !important;
+        width: 100%;
+        gap: 0;
+    }
+    
+    .navbar .navbar-nav .nav-item {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid #f0f0f0;
+        text-align: left;
+    }
+    
+    .navbar .navbar-nav a.nav-link {
+        padding: 12px 15px !important;
+        color: #232323 !important;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .nav-btn-post {
+        margin: 15px 0 5px 0 !important;
+        width: 100%;
+        justify-content: center;
+        border-radius: 8px !important;
+        padding: 10px !important;
+    }
+    
+    .page-heading {
+        padding: 140px 15px 70px 15px;
+    }
+    
+    .page-heading h1 {
+        font-size: 30px;
+    }
+    
+    .services, .more-info, .fun-facts, .testimonials, .callback-form, .contact-us, .team {
+        margin-top: 60px !important;
+        padding: 60px 0 !important;
+    }
+}
+
+/* Mobile Devices (max-width: 576px) */
+@media (max-width: 576px) {
+    .page-heading {
+        padding: 125px 15px 50px 15px;
+    }
+    
+    .page-heading h1 {
+        font-size: 24px;
+        letter-spacing: 0.5px;
+    }
+    
+    .page-heading span {
+        font-size: 13px;
+    }
+    
+    .navbar .navbar-brand h2 {
+        font-size: 17px;
+    }
+    
+    .section-heading h2 {
+        font-size: 24px;
+    }
+    
+    .section-heading span {
+        font-size: 13px;
+    }
+    
+    .jobs-search-box {
+        padding: 20px 15px;
+    }
+    
+    .jobs-search-box .form-control {
+        height: 44px;
+        font-size: 14px;
+    }
+    
+    .jobs-search-box .btn-search {
+        height: 44px;
+        font-size: 13px;
+    }
+    
+    .job-card-header {
+        gap: 12px;
+    }
+    
+    .job-card-logo {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .job-card-title {
+        font-size: 17px;
+    }
+    
+    .job-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .job-card-footer a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .job-detail-box {
+        padding: 20px 15px;
+    }
+    
+    .job-detail-title {
+        font-size: 22px;
+    }
+    
+    .auth-form-card {
+        padding: 25px 15px;
+    }
+    
+    .fun-facts {
+        background-attachment: scroll !important;
+    }
+    
+    .count-area-content {
+        margin: 10px 0;
+    }
+}
+
+/* ==========================================================================
+   UI Refinements: Career Services & Equal Dimension Testimonials
+   ========================================================================== */
+
+/* 1. Career Services Centering & Spacing from Footer */
+.career-services-section {
+    margin-top: 80px;
+    margin-bottom: 120px !important;
+    padding-bottom: 20px;
+    clear: both;
+    position: relative;
+    z-index: 2;
+}
+
+.career-services-section .contact-form {
+    background-color: #232323;
+    border-radius: 10px;
+    border-top: 4px solid #a4c639;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    margin: 0 auto;
+}
+
+/* 2. Equal Dimension Testimonials (Image-Free Carousel) */
+.owl-testimonials.owl-carousel .owl-stage {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.owl-testimonials.owl-carousel .owl-item {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+}
+
+.owl-testimonials .testimonial-item {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: stretch !important;
+    height: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 10px 5px 25px 5px;
+    box-sizing: border-box !important;
+}
+
+.owl-testimonials .testimonial-item .inner-content {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    min-height: 240px !important;
+    background-color: #ffffff !important;
+    padding: 35px 30px !important;
+    border-radius: 8px !important;
+    border: 1px solid #f0f0f0 !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05) !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s ease !important;
+}
+
+.owl-testimonials .testimonial-item:hover .inner-content {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+    border-color: #e2e8f0 !important;
+}
+
+.owl-testimonials .testimonial-item .inner-content h4 {
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    color: #1e1e1e !important;
+    letter-spacing: 0.25px !important;
+    margin-bottom: 5px !important;
+    line-height: 1.3 !important;
+}
+
+.owl-testimonials .testimonial-item .inner-content span {
+    display: inline-block !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    color: #a4c639 !important;
+    margin-bottom: 16px !important;
+    line-height: 1.2 !important;
+}
+
+.owl-testimonials .testimonial-item .inner-content p {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    color: #555555 !important;
+    margin: 0 !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+}
+
+/* Strictly hide all person images in testimonials */
+.owl-testimonials .testimonial-item img {
+    display: none !important;
+}
+
+/* 3. Our Team Section – Image-Free Founder & Co-Founder Profile Cards & Modals */
+.team-profile-card {
+    height: 100%;
+    min-height: 230px;
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-top: 4px solid #a4c639;
+    border-radius: 10px;
+    padding: 38px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-sizing: border-box;
+    text-align: left;
+    outline: none;
+}
+
+.team-profile-card:hover,
+.team-profile-card:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(164, 198, 57, 0.22);
+    border-color: #a4c639;
+    outline: none;
+}
+
+.team-profile-card .profile-card-header {
+    margin-bottom: 20px;
+}
+
+.team-profile-card .role-badge {
+    display: inline-block;
+    background-color: rgba(164, 198, 57, 0.12);
+    color: #729415;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.team-profile-card .profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-bottom: 10px;
+    letter-spacing: 0.25px;
+    line-height: 1.25;
+}
+
+.team-profile-card .profile-tagline {
+    font-size: 15px;
+    font-style: italic;
+    color: #555555;
+    line-height: 1.55;
+    margin-bottom: 0;
+}
+
+.team-profile-card .profile-card-footer {
+    padding-top: 15px;
+    border-top: 1px solid #f2f4f7;
+}
+
+.team-profile-card .view-profile-cta {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #a4c639;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.team-profile-card:hover .view-profile-cta {
+    color: #8dae2a;
+    text-decoration: underline;
+    transform: translateX(3px);
+}
+
+/* Profile Modal Styles */
+.profile-modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.profile-modal-header {
+    padding: 26px 32px 20px 32px;
+    border-bottom: 1px solid #edf0f2;
+    background-color: #fafbfc;
+}
+
+.profile-modal-header .role-badge {
+    display: inline-block;
+    background-color: rgba(164, 198, 57, 0.15);
+    color: #729415;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+.profile-modal-close {
+    font-size: 32px;
+    font-weight: 300;
+    color: #555;
+    opacity: 0.7;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.profile-modal-close:hover {
+    color: #000;
+    opacity: 1;
+}
+
+.profile-modal-body {
+    padding: 30px 32px;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.7;
+}
+
+.profile-section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-focus-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.profile-focus-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.55;
+    color: #3e3e3e;
+}
+
+.profile-highlight-box {
+    background-color: #f8faf2;
+    border: 1px solid #e1edc6;
+    border-radius: 8px;
+    padding: 18px 22px;
+}
+
+.profile-highlight-box .highlight-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #a4c639;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.company-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.company-chip {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.profile-statement-box {
+    background-color: #f9fbf4;
+    border-left: 4px solid #a4c639;
+    border-radius: 4px;
+    padding: 20px 22px;
+    font-style: italic;
+    color: #333333;
+}
+
+.statement-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-style: normal;
+}
+
+.profile-modal-footer {
+    padding: 16px 32px;
+    border-top: 1px solid #edf0f2;
+    background-color: #fafbfc;
+}
+
+.text-theme {
+    color: #a4c639 !important;
+}
+
+@media (max-width: 767px) {
+    .team-profile-card {
+        padding: 28px 22px;
+    }
+    .profile-modal-header,
+    .profile-modal-body,
+    .profile-modal-footer {
+        padding: 20px;
+    }
+    .team-profile-card .profile-name {
+        font-size: 21px;
+    }
+}
+
+
